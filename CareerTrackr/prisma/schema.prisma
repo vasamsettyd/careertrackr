@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String
+  phone    String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  resetToken        String?
+  resetTokenExpiry  DateTime?
+  userImagePublicId String?
+  userImageUrl      String?
+  jobs              Job[]
+  tags              Tag[]
+}
+
+model Job {
+  id           String        @id @default(uuid())
+  userId       Int           @map("user_id")
+  companyName  String
+  role         String
+  address      String?
+  appliedDate  DateTime      @map("applied_date")
+  status       Status
+  notes        String?
+  jobTitle     String        @map("job_title")
+  jobType      JobType       @map("job_type")
+  salary       Int?
+  jobUrl       String?       @map("job_url")
+  locationType LocationType? @map("location_type")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tags JobTag[]
+}
+
+model Tag {
+  id     String @id @default(uuid())
+  userId Int    @map("user_id")
+  name   String
+
+  user User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  jobs JobTag[]
+}
+
+model JobTag {
+  jobId String @map("job_id")
+  tagId String @map("tag_id")
+
+  job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  tag Tag @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([jobId, tagId])
+}
+
+enum Status {
+  applied
+  interview
+  offer
+  rejected
+  saved
+  closed
+}
+
+enum JobType {
+  full_time
+  part_time
+  contract
+  internship
+  temporary
+  volunteer
+  other
+}
+
+enum LocationType {
+  remote
+  on_site
+  hybrid
+}
