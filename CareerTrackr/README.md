@@ -1,6 +1,9 @@
 # CareerTrackr 🚀
+*Organize your job search. Track every step. Land faster.*
 
 A modern, full-stack job application tracking system built with Next.js 15, TypeScript, and PostgreSQL. Track your job search progress with beautiful analytics, organized job applications, and intuitive management tools.
+
+🔗 **Live Demo**: [CareerTrackr on Vercel](https://jobquest-demo.vercel.app)
 
 ## ✨ Features
 
@@ -73,6 +76,8 @@ jobquest/
 ```
 
 ## 🚀 Quick Start
+
+## Developer Notes
 
 ### Prerequisites
 
@@ -264,4 +269,4 @@ The app can be deployed to any platform that supports Next.js:
 - **Netlify** 
 - **DigitalOcean**
 - **AWS**
-- **Vercel** (Recommended) but I am here if need deploy anywhere else i will help you if you stuck anywhere
+- **Vercel** (Recommended) 
