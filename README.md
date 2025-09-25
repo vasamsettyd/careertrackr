@@ -76,9 +76,9 @@ jobquest/
 ```
 ## Screenshots
 
-<img width="1710" height="1107" alt="Screenshot 2025-09-25 at 5 51 25 PM" src="https://github.com/user-attachments/assets/c172125e-b177-4c45-b6ff-2a5521847b3b" />
-="1107" alt="Screenshot 2025-09-25 at<img width="1710" height="1107" alt="Screenshot 2025-09-25 at 5 53 08 PM" src="https://github.com/user-attachments/assets/d32ec0fc-0bf7-47c0-9693-00f42c981954" />
+<img width="1710" height="1107" alt="Screenshot 2025-09-25 at 5 55 56 PM" src="https://github.com/user-attachments/assets/414baf72-2c26-4fee-9329-9504f939ef80" />
 
+<img width="1710" height="1107" alt="Screenshot 2025-09-25 at 5 55 38 PM" src="https://github.com/user-attachments/assets/1e6e5371-9b43-4a8d-97ec-41d3667fed6f" />
 
 ## 🚀 Quick Start
 
